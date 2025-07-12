@@ -37,27 +37,6 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
-    @media (max-width: 768px) {
-        .galeri h2 {
-        font-size: 2rem;
-        }
-        .galeri-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
-    }
-  @media (max-width: 480px) {
-    .galeri h2 {
-      font-size: 1.5rem;
-    }
-    .galeri-grid {
-      grid-template-columns: 1fr;
-    }
-    .galeri-grid img {
-      width: 100%;
-      height: auto;
-    }
-  }
-  
 </style>
 </body>
 </html>

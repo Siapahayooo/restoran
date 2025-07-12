@@ -1,27 +1,34 @@
 <?php
 include '../koneksi.php';
 
-if (isset($_POST['update'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $id = $_POST['id'];
-    $nama = $_POST['nama'];   
+    $nama = $_POST['nama'];
     $deskripsi = $_POST['deskripsi'];
-    $kategori = $_POST['kategori'];
     $harga = $_POST['harga'];
+    $kategori = $_POST['kategori'];
 
-    // Cek apakah ada file gambar baru di-upload
-    if ($_FILES['gambar']['name'] != '') {
-        $gambar = time() . "_" . $_FILES['gambar']['name'];
+    if ($_FILES['gambar']['name']) {
+        $gambar = $_FILES['gambar']['name'];
         $tmp = $_FILES['gambar']['tmp_name'];
-        move_uploaded_file($tmp, "../upload/" . $gambar);
+        move_uploaded_file($tmp, '../upload/' . $gambar);
 
-        // Update termasuk gambar
-        $query = "UPDATE menu SET nama='$nama', deskripsi='$deskripsi', kategori='$kategori', harga='$harga', gambar='$gambar' WHERE id='$id'";
+        // Update dengan gambar baru
+        $query = mysqli_query($conn, "UPDATE menu SET 
+            nama='$nama', deskripsi='$deskripsi', harga='$harga', kategori='$kategori', gambar='$gambar' 
+            WHERE id=$id");
     } else {
-        // Update tanpa gambar
-        $query = "UPDATE menu SET nama='$nama', deskripsi='$deskripsi', kategori='$kategori', harga='$harga' WHERE id='$id'";
+        // Update tanpa mengganti gambar
+        $query = mysqli_query($conn, "UPDATE menu SET 
+            nama='$nama', deskripsi='$deskripsi', harga='$harga', kategori='$kategori' 
+            WHERE id=$id");
     }
 
-    mysqli_query($conn, $query);
-    header("Location: index.php");
+    if ($query) {
+        header("Location: index.php");
+        exit;
+    } else {
+        echo "Gagal memperbarui data.";
+    }
 }
 ?>

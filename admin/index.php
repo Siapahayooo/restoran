@@ -54,5 +54,51 @@ $result = mysqli_query($conn, "SELECT * FROM menu");
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    font-weight: bold;
+    color: #343a40;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.table img {
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+a.btn-danger {
+    background-color: #dc3545;
+    border: none;
+}
+
+a.btn-danger:hover {
+    background-color: #c82333;
+}
+
+a.btn-success {
+    background-color: #198754;
+}
+
+a.btn-success:hover {
+    background-color: #157347;
+}
+  </style>
 </body>
 </html>
