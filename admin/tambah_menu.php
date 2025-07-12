@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
     header("Location: ../login.php");
     exit;
@@ -10,29 +11,32 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
 <html>
 <head>
     <title>Tambah Menu</title>
+    <link rel="stylesheet" href="style-admin.css">
 </head>
 <body>
-    <h2>Form Tambah Menu</h2>
-    <form action="proses_menu.php" method="post" enctype="multipart/form-data">
-        <label>Nama Menu:</label><br>
-        <input type="text" name="nama" required><br><br>
+    <div class="admin-container">
+        <h2>Tambah Menu Baru</h2>
+        <form action="proses_tambah.php" method="POST" enctype="multipart/form-data">
+            <label>Nama Menu</label>
+            <input type="text" name="nama" required>
 
-        <label>Harga:</label><br>
-        <input type="number" name="harga" required><br><br>
+            <label>Deskripsi</label>
+            <textarea name="deskripsi" required></textarea>
 
-        <label>Kategori:</label><br>
-        <select name="kategori" required>
-            <option value="makanan">Makanan</option>
-            <option value="minuman">Minuman</option>
-        </select><br><br>
+            <label>Harga</label>
+            <input type="number" name="harga" required>
 
-        <label>Deskripsi:</label><br>
-        <textarea name="deskripsi" required></textarea><br><br>
+            <label>Kategori</label>
+            <select name="kategori" required>
+                <option value="makanan">Makanan</option>
+                <option value="minuman">Minuman</option>
+            </select>
 
-        <label>Gambar:</label><br>
-        <input type="file" name="gambar" accept="image/*" required><br><br>
+            <label>Gambar</label>
+            <input type="file" name="gambar" required>
 
-        <input type="submit" value="Tambah Menu">
-    </form>
+            <button type="submit">Tambah Menu</button>
+        </form>
+    </div>
 </body>
 </html>
