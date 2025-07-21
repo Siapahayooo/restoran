@@ -41,6 +41,12 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
     </div>
 
     <style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
 .admin-container {
     width: 50%;
     margin: 0 auto;

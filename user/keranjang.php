@@ -42,9 +42,11 @@ $query = "SELECT keranjang.id, menu.nama, menu.harga, menu.gambar, keranjang.jum
             </nav>
         </div>
     </header>
-
-    ...
-    <h2 style="text-align:center;">Keranjang Saya</h2>
+    <h2 style="text-align:center; margin-top: 20px;">Keranjang Saya</h2>
+    <div style="text-align:center; margin-bottom: 20px;"></div>
+        <a href="menu_user.php">
+            <button style="padding: 10px 20px; font-size: 16px;">Kembali ke Menu</button>
+        </a>
     <div class="menu-container">
         <?php
         $total = 0; // Inisialisasi total harga
@@ -74,6 +76,63 @@ $query = "SELECT keranjang.id, menu.nama, menu.harga, menu.gambar, keranjang.jum
     <?php else: ?>
         <p style="text-align:center; margin-top: 30px;">Keranjang Anda kosong.</p>
     <?php endif; ?>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(244, 244, 244);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: green;
+            color: white;
+            padding: 10px 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .navbar h1 {
+            margin: 0;
+        }
+        .navbar nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        .navbar nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .menu-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 250px; /* Set a fixed width for the cards */
+        }
+        .menu-card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </body>
 
 </html>

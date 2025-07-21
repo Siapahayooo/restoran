@@ -43,8 +43,6 @@
 <body>
 <!-- Navbar -->
 <?php include 'fitur/navbar.php'; ?>
-<!-- Slide -->
-<?php include 'fitur/slide.php'; ?>
 
 <!-- Hero Section -->
 <section class="hero">

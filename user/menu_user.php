@@ -15,35 +15,14 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'user') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu Makanan</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@400..800&family=Share+Tech&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style-user.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style-index.css">
 </head>
 
 <body>
-    <header>
-        <div class="navbar">
-            <h1>S!Restoran</h1>
-            <nav>
-                <ul>
-                    <li><a href="../index.php">Beranda</a></li>
-                    <li><a href="#">Tentang</a></li>
-                    <li><a href="#">Kontak</a></li>
-                    <li><a href="keranjang.php">🛒 Keranjang</a></li>
-                    <li><a href="status_pesanan.php">📄 Status Pesanan</a></li>
-                    <li><a href="riwayat.php">📜 Riwayat Pesanan</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="menu">
-        <ul>
-            <button><a href="minuman.php">Minuman</a></button>
-        </ul>
-    </div>
+<?php 
+  include 'header.php';
+?>
 
     <div class="menu-container">
         <?php
@@ -62,6 +41,77 @@ if (!isset($_SESSION['username']) || $_SESSION['role'] != 'user') {
             </div>
         <?php endwhile; ?>
     </div>
+    
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+
+
+/*  menu makanan */
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.menu-card {
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.menu-card p {
+    font-size: small;
+    font-weight: bold;
+    height: 20px;
+}
+
+.bottom-makanan {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.menu-card button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-card button:hover {
+    background-color: rgb(11, 155, 11);
+}
+    </style>
 </body>
 
 </html>

@@ -10,13 +10,13 @@
   <h2>Menu Unggulan Kami</h2>
   <div class="menu-grid">
     <div class="menu-card">
-      <img src="image/assets/pg" alt="Mie Pedas">
+      <img src="image/assets/nasi goreng.jpg" alt="Mie Pedas">
       <h4>Mie Pedas Gila</h4>
       <p>Mie dengan level pedas sesuai selera Anda.</p>
       <span class="harga">Rp 20.000</span>
     </div>
     <div class="menu-card">
-      <img src="image/assets/" alt="Es Kopi">
+      <img src="image/assets/nasi goreng.jpg" alt="Es Kopi">
       <h4>Es Kopi Susu</h4>
       <p>Kopi segar dengan susu kental manis premium.</p>
       <span class="harga">Rp 18.000</span>
